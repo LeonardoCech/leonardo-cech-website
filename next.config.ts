@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Necessário para exportação estática
   },
-  // basePath: '/leonardo-cech-website',
-  // assetPrefix: '/leonardo-cech-website/',
+  basePath: '/leonardo-cech-website',
+  assetPrefix: '/leonardo-cech-website/',
 };
 
 export default nextConfig;
