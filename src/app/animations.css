@@ -1,0 +1,207 @@
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-20%);
+        /* Mova apenas 20% para a esquerda */
+    }
+}
+
+@keyframes growFromTopRight {
+    from {
+        transform: scale(0);
+        /* Começa invisível */
+        transform-origin: top right;
+        /* Origem da transformação na quina superior direita */
+    }
+
+    to {
+        transform: scale(1);
+        /* Cresce para o tamanho normal */
+    }
+}
+
+.fade-in {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    /* Duração do fade-in */
+    animation-fill-mode: forwards;
+}
+
+.panel {
+    animation-duration: 1.5s;
+    /* Duração das animações dos painéis */
+    animation-fill-mode: forwards;
+}
+
+#panel-1 {
+    animation-name: slideInLeft;
+}
+
+#panel-2 {
+    animation-name: slideInRight;
+}
+
+#image {
+    opacity: 0;
+    /* Inicialmente invisível */
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    /* Duração da animação da imagem */
+    animation-delay: 1s;
+    /* Atraso de 1 segundo antes de começar a animação */
+    animation-fill-mode: forwards;
+}
+
+.image-visible {
+    opacity: 1;
+    /* Torna a imagem visível quando a animação começa */
+}
+
+@keyframes centerToLeft {
+  0% {
+    transform: translate(-50%, -50%); /* Começa no centro da tela */
+    opacity: 0; /* Inicialmente invisível */
+  }
+  50% {
+    opacity: 1; /* Torna visível no centro */
+  }
+  100% {
+    transform: translate(-100%, -50%); /* Move para a posição final à esquerda */
+  }
+}
+
+.content-left {
+  position: absolute; /* Para centralizar */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Move para o centro */
+  opacity: 0; /* Inicialmente invisível */
+}
+
+.content-left-visible {
+  opacity: 1; /* Torna o conteúdo visível */
+  animation: centerToLeft 1s forwards; /* Aplica a animação de centralização para a esquerda */
+}
+
+.content-left-move {
+    animation-name: moveLeft;
+    /* Aplica a animação de mover para a esquerda */
+    animation-duration: 1s;
+    /* Duração da animação */
+    animation-fill-mode: forwards;
+    /* Mantém a posição final após a animação */
+}
+
+@keyframes centerToFinal {
+  0% {
+    transform: translate(-50%, -50%); /* Começa no centro da tela */
+    opacity: 0; /* Inicialmente invisível */
+  }
+  50% {
+    opacity: 1; /* Torna visível no centro */
+  }
+  100% {
+    transform: translate(0, 0); /* Move para a posição final */
+  }
+}
+
+.content-right {
+    width: 0;
+    /* Largura inicial */
+    overflow: hidden;
+    /* Oculta o conteúdo que excede a largura */
+    opacity: 0;
+    /* Inicialmente invisível */
+    transition: width 1s ease, opacity 1s ease;
+    /* Transição suave para largura e opacidade */
+    visibility: hidden;
+    /* Inicialmente invisível */
+    position: absolute;
+    /* Para centralizar */
+    top: 50%;
+    /* Centraliza verticalmente */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Move para o centro */
+}
+
+.content-right-visible {
+    width: 500px;
+    /* Largura final desejada */
+    opacity: 1;
+    /* Torna o conteúdo visível com animação */
+    visibility: visible;
+    /* Torna o conteúdo visível */
+    animation: centerToFinal 1s forwards;
+    /* Aplica a animação de centralização */
+}
+
+.content-right-text {
+    opacity: 0;
+    /* Inicialmente invisível */
+    transition: opacity 1s;
+    /* Transição suave para a visibilidade */
+}
+
+.content-right-text-visible {
+    opacity: 1;
+    /* Torna o texto visível */
+}
+
+@keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link-slide-up-in {
+  animation: slideUpIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.link-button {
+  opacity: 0;
+  /* Outras regras, se houver */
+}
