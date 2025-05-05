@@ -4,8 +4,8 @@ import './globals.css';
 import './animations.css';
 
 export const metadata: Metadata = {
-  title: 'Leonardo Cech | Portfólio',
-  description: 'Portfólio de Leonardo Cech',
+  title: 'Leonardo Cech',
+  description: 'Leonardo Cech\'s Website',
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang='pt'>
       <head>
-        <title>Leonardo Cech | Portfólio</title>
+        <title>Leonardo Cech</title>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link href='https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet' />

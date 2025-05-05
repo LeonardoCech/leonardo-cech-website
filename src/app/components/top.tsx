@@ -101,6 +101,51 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
         marginTop: isMobile ? '3rem' : '10rem',
       }}
     >
+      <div className={`w-fit h-fit flex justify-center items-center`} >
+        <div
+          id='image-container'
+          style={{
+            width: `calc(358px * ${isMobile ? mobileMult : desktopMult})`,
+            height: `calc(358px * ${isMobile ? mobileMult : desktopMult})`,
+            position: 'relative',
+          }}
+        >
+          <svg
+            className="panel-svg"
+            width={`calc(358px * ${isMobile ? mobileMult : desktopMult})`}
+            height={`calc(358px * ${isMobile ? mobileMult : desktopMult})`}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              pointerEvents: 'none',
+            }}
+          >
+            <circle
+              className={`panel-circle ${contentVisible ? 'draw-border' : ''}`}
+              cx="50%"
+              cy="50%"
+              r={`${(350 * (isMobile ? mobileMult : desktopMult)) / 2}`}
+              fill={contentVisible ? 'rgba(56, 67, 79, .75)' : 'transparent'}
+              stroke="#38434F"
+              strokeWidth="8"
+            />
+          </svg>
+
+          <Image
+            id='image'
+            src='image.png'
+            alt='Leonardo Cech'
+            width={342 * (isMobile ? mobileMult : desktopMult)}
+            height={350 * (isMobile ? mobileMult : desktopMult)}
+            style={{
+              transform: `translateY(calc(-34px * ${isMobile ? mobileMult : desktopMult})) translateX(calc(8px * ${isMobile ? mobileMult : desktopMult})) rotateY(180deg)`,
+            }}
+          />
+        </div>
+      </div>
+
       <div
         className={`flex flex-col ${contentVisible ? 'expand-horizontal' : ''}`}
         style={{
@@ -161,52 +206,7 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
             </ul>
           </div>
         )}
-      </div>
-
-      <div className={`w-fit h-fit flex justify-center items-center`} >
-        <div
-          id='image-container'
-          style={{
-            width: `calc(358px * ${isMobile ? mobileMult : desktopMult})`,
-            height: `calc(358px * ${isMobile ? mobileMult : desktopMult})`,
-            position: 'relative',
-          }}
-        >
-          <svg
-            className="panel-svg"
-            width={`calc(358px * ${isMobile ? mobileMult : desktopMult})`}
-            height={`calc(358px * ${isMobile ? mobileMult : desktopMult})`}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 1,
-              pointerEvents: 'none',
-            }}
-          >
-            <circle
-              className={`panel-circle ${contentVisible ? 'draw-border' : ''}`}
-              cx="50%"
-              cy="50%"
-              r={`${(350 * (isMobile ? mobileMult : desktopMult)) / 2}`}
-              fill={contentVisible ? 'rgba(56, 67, 79, .75)' : 'transparent'}
-              stroke="#38434F"
-              strokeWidth="8"
-            />
-          </svg>
-
-          <Image
-            id='image'
-            src='image.png'
-            alt='Leonardo Cech'
-            width={342 * (isMobile ? mobileMult : desktopMult)}
-            height={350 * (isMobile ? mobileMult : desktopMult)}
-            style={{
-              transform: `translateY(calc(-34px * ${isMobile ? mobileMult : desktopMult})) translateX(calc(8px * ${isMobile ? mobileMult : desktopMult}))`,
-            }}
-          />
-        </div>
-      </div>
+      </div>      
     </div>
   );
 });
